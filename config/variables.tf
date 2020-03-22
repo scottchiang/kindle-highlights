@@ -8,6 +8,12 @@ variable "credentials_profile" {
   type    = string
 }
 
+variable "namespace" {
+  description = "Name to use for lambda function and S3 bucket"
+  type = string
+}
+
+
 variable "ses_rule_set_name" {
   description = "SES rule set name"
   type = string

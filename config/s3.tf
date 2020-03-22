@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "kindle_highlights" {
-  bucket = "airscotty-kindle-highlights"
+  bucket = var.namespace
 
   tags = {
     Name = "Kindle Highlights"

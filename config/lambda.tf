@@ -8,7 +8,7 @@ resource "aws_lambda_permission" "allow_bucket" {
 
 resource "aws_lambda_function" "kindle_highlights" {
   filename = "../src/lambda.zip"
-  function_name = "airscotty_kindle_highlights"
+  function_name = var.namespace
   role = aws_iam_role.lambda.arn
   handler = "kindle_email_parser.handler"
   runtime = "python3.7"
