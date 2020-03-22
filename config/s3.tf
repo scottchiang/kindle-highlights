@@ -13,6 +13,8 @@ resource "aws_s3_bucket_notification" "kindle_highlights_notification" {
     lambda_function_arn = aws_lambda_function.kindle_highlights.arn
     events = ["s3:ObjectCreated:*"]
   }
+
+  depends_on = [aws_lambda_permission.allow_bucket]
 }
 
 resource "aws_s3_bucket_policy" "ses" {
