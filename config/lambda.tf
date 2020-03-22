@@ -7,7 +7,7 @@ resource "aws_lambda_permission" "allow_bucket" {
 }
 
 resource "aws_lambda_function" "kindle_highlights" {
-  filename = "../src/lambda.zip"
+  filename = "${path.module}/../src/lambda.zip"
   function_name = var.namespace
   role = aws_iam_role.lambda.arn
   handler = "kindle_email_parser.handler"

@@ -1,6 +1,6 @@
 src/build/
-config/*.tfstate
-config/*.tfstate.backup
+config/*.tfstate*
+*.tfstate*
 .vscode/
 vars/*.tfvars
 .terraform
