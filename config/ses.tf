@@ -17,6 +17,10 @@ resource "aws_ses_receipt_rule" "kindle_highlights_s3" {
   depends_on = [null_resource.delay]
 }
 
+# This is necessary because there's a terraform bug with creating SES receipt rules
+# when running terraform s3 configuration at the same time.  This is a hack to fix
+# the issue.
+# https://github.com/terraform-providers/terraform-provider-aws/issues/7917
 resource "null_resource" "delay" {
   provisioner "local-exec" {
     command = "sleep 10"
